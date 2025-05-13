@@ -33,7 +33,7 @@ public class CommonMethods extends pageInitializer{
 	 * @param text
 	 */
 	
-	public static WebDriver driver;
+
 	
 	public static void sendText(WebElement element, String text) 
 	{
@@ -412,6 +412,10 @@ public class CommonMethods extends pageInitializer{
 	public static byte[] takeScreenshot(String fileName)
 	{
 		
+		if (driver == null) {
+	        System.out.println("Driver is null, cannot take screenshot");
+	        return new byte[0];
+	    }
 		String destination = Constants.SCREENSHOT_FILEPATH + fileName + getTimestamp() + ".png";
 		
 		TakesScreenshot ts = (TakesScreenshot) driver;

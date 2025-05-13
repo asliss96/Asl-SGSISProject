@@ -15,8 +15,6 @@ public class BaseClass {
 	public static WebDriver driver;
 	
 	
-	
-	
 	public static void setUp() 
 	{
 		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
@@ -43,6 +41,7 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT_TIME));
 		String url = ConfigsReader.getProperty("url");
 		driver.get(url);
+		pageInitializer.initialize();
 		
 		
 		
