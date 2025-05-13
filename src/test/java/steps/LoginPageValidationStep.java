@@ -69,7 +69,7 @@ public class LoginPageValidationStep extends CommonMethods {
 		WebDriverWait wait = new WebDriverWait(BaseClass.driver, Duration.ofSeconds(10));
 		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='Header1_lblSIS']")));
 	   String expectedstudentvalidate = "Student Information System";
-	   String actualstudentvalidate =loginPage.studentInfoText.getText();
+	   String actualstudentvalidate =homePage.studentInfoText.getText();
 	   
 	   if(actualstudentvalidate.equals(expectedstudentvalidate)) 
 	   {
