@@ -38,7 +38,7 @@ public class LoginPageElements extends CommonMethods{
 	{
 		sendText(userName,ConfigsReader.getProperty("username"));
 		sendText(password,ConfigsReader.getProperty("password"));
-		click(loginButton);
+		//click(loginButton);
 	}
 
 }

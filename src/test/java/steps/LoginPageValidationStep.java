@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -55,12 +56,14 @@ public class LoginPageValidationStep extends CommonMethods {
 	}
 	@When("I enter a valid username and valid password")
 	public void i_enter_a_valid_username_and_valid_password() {
-	    sendText(loginPage.userName,ConfigsReader.getProperty("username"));
-	    sendText(loginPage.password,ConfigsReader.getProperty("password"));
+	 
+	    loginPage.adminLogin();
 	}
 	@When("I enter login button")
 	public void i_enter_login_button() {
 		 loginPage.loginButton.click();
+		 handleUnexpectedAlertIfPresent();
+		
 	}
 	@Then("Student Information System should be visible")
 	public void student_information_system_should_be_visible() {
@@ -84,18 +87,21 @@ public class LoginPageValidationStep extends CommonMethods {
 	public void i_enter_a_valid_username_and_wrong_password() {
 	    sendText(loginPage.userName,ConfigsReader.getProperty("username"));
 	    sendText(loginPage.password,ConfigsReader.getProperty("password1"));
+	   
 	}
 	
 	@When("I enter a wrong username and valid password")
 	public void i_enter_a_wrong_username_and_valid_password() {
 		sendText(loginPage.userName,ConfigsReader.getProperty("username1"));
 	    sendText(loginPage.password,ConfigsReader.getProperty("password"));
+	    
 	}
 
 	@When("I enter a wrong username and wrong password")
 	public void i_enter_a_wrong_username_and_wrong_password() {
 		sendText(loginPage.userName,ConfigsReader.getProperty("username1"));
 	    sendText(loginPage.password,ConfigsReader.getProperty("password1"));
+	    
 	}
 	
 	@Then("Student Information System should not be visible")

@@ -22,7 +22,7 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome=true, 
 		
 		
-		tags= "@LoginPageValidation",
+		tags= "@SuccessfulLoginAndHomepageValidation",
 		
 		plugin = {
 					
