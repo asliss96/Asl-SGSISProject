@@ -2,6 +2,7 @@ package utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Driver;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -16,6 +17,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -447,5 +449,16 @@ public class CommonMethods extends pageInitializer{
 		return sdf.format(date);
 		
 	}
+	
+	public static void handleUnexpectedAlertIfPresent() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(7));
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            System.out.println("Unexpected alert detected: " + alert.getText());
+            alert.accept(); 
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
 	
 }
