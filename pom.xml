@@ -110,7 +110,7 @@
 							<inputDirectory>${project.build.directory}</inputDirectory>
 							<jsonFiles>
 								<!-- supports wildcard or name pattern -->
-								<param>**/*.json</param>
+								  <param>${project.build.directory}/cucumber.json</param>
 							</jsonFiles>
 
 						</configuration>
