@@ -7,34 +7,28 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		
-	
-		features="src/test/resources/feature/",
 
-		
-		glue="steps", 
-		
-		
-		
-		dryRun=false, 
-		
-		
-		monochrome=true, 
-		
-		
-		tags= "@SuccessfulLoginAndHomepageValidation",
-		
+		features = "src/test/resources/feature/",
+
+		glue = "steps",
+
+		dryRun = false,
+
+		monochrome = true,
+
+		tags = "@StudentsPageValidation",
+
 		plugin = {
-					
-					"pretty",
-					
-					"html:target/cucumber-default-report.html",
-					
-					"json:target/cucumber.json"
-				}
+
+				"pretty", 
 				
-		
-		)
+				"json:target/cucumber.json",
+
+				"html:target/cucumber-reports.html"
+
+		}
+
+)
 
 public class TestRunner {
 

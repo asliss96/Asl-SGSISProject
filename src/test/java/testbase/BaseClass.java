@@ -10,6 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import utilities.ConfigsReader;
 import utilities.Constants;
 
+
+
+
 public class BaseClass {
 	
 	public static WebDriver driver;
