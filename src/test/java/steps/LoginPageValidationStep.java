@@ -62,7 +62,7 @@ public class LoginPageValidationStep extends CommonMethods {
 	@When("I enter login button")
 	public void i_enter_login_button() {
 		 loginPage.loginButton.click();
-		 handleUnexpectedAlertIfPresent();
+		// handleUnexpectedAlertIfPresent();
 		
 	}
 	@Then("Student Information System should be visible")
