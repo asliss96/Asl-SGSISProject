@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
 
 		monochrome = true,
 
-		tags = "@StudentsPageValidation",
+		tags = "@AddNewStudent",
 
 		plugin = {
 
